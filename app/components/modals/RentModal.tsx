@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Modal from "./Modal";
 import useRentModal from "@/app/hooks/useRentModal";
 import Heading from "../Heading";
@@ -63,13 +63,16 @@ const RentModal = () => {
     [location]
   );
 
-  const setCustomValue = (id: string, value: any) => {
-    setValue(id, value, {
-      shouldDirty: true,
-      shouldValidate: true,
-      shouldTouch: true,
-    });
-  };
+  const setCustomValue = useCallback(
+    (id: string, value: any) => {
+      setValue(id, value, {
+        shouldDirty: true,
+        shouldValidate: true,
+        shouldTouch: true,
+      });
+    },
+    [setValue]
+  );
 
   const onBack = () => {
     setStep(value => value - 1);
@@ -112,28 +115,48 @@ const RentModal = () => {
     return "Back";
   }, [step]);
 
-  let bodyContent = (
-    <div className="flex flex-col gap-8">
-      <Heading
-        title="Which of these best describes your place ? "
-        subtitle="Pick a category"
-      />
-      <div className="grid gird-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto ">
-        {categories.map(item => (
-          <div key={item.label} className="col-span-1">
-            <CategoryInput
-              onClick={category => setCustomValue("category", category)}
-              selected={category === item.label}
-              label={item.label}
-              icon={item.icon}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
+  const guestCountUpdate = useCallback(
+    (value: number) => {
+      setCustomValue("guestCount", value);
+    },
+    [setCustomValue]
   );
-  if (step === STEPS.LOCATION) {
-    bodyContent = (
+
+  const roomCountUpdate = useCallback(
+    (value: number) => {
+      setCustomValue("roomCount", value);
+    },
+    [setCustomValue]
+  );
+
+  const bathroomCountUpdate = useCallback(
+    (value: number) => {
+      setCustomValue("bathroomCount", value);
+    },
+    [setCustomValue]
+  );
+  const diffBodyContent: Record<STEPS, JSX.Element> = {
+    0: (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="Which of these best describes your place ? "
+          subtitle="Pick a category"
+        />
+        <div className="grid gird-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto ">
+          {categories.map(item => (
+            <div key={item.label} className="col-span-1">
+              <CategoryInput
+                onClick={category => setCustomValue("category", category)}
+                selected={category === item.label}
+                label={item.label}
+                icon={item.icon}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    ),
+    1: (
       <div className="flex flex-col gap-8">
         <Heading
           title="Where is your place located ?"
@@ -145,11 +168,8 @@ const RentModal = () => {
         />
         <Map center={location?.latlng} />
       </div>
-    );
-  }
-
-  if (step === STEPS.INFO) {
-    bodyContent = (
+    ),
+    2: (
       <div className="flex flex-col gap-8">
         <Heading
           title="Share some basics about your place"
@@ -159,26 +179,23 @@ const RentModal = () => {
           title="Guests"
           subtitle="How many guests do you allow ?"
           value={guestCount}
-          onChange={value => setCustomValue("guestCount", value)}
+          onChange={guestCountUpdate}
         />
         <Counter
           title="Rooms"
           subtitle="How many rooms do you allow ?"
           value={roomCount}
-          onChange={value => setCustomValue("roomCount", value)}
+          onChange={roomCountUpdate}
         />
         <Counter
           title="Bathrooms"
           subtitle="How many bathrooms do you allow ?"
           value={bathroomCount}
-          onChange={value => setCustomValue("bathroomCount", value)}
+          onChange={bathroomCountUpdate}
         />
       </div>
-    );
-  }
-
-  if (step === STEPS.IMAGES) {
-    bodyContent = (
+    ),
+    3: (
       <div className="flex flex-col gap-8">
         <Heading
           title="Add a photo of your place"
@@ -189,11 +206,8 @@ const RentModal = () => {
           onChange={value => setCustomValue("imageSrc", value)}
         />
       </div>
-    );
-  }
-
-  if (step === STEPS.DESCRIPTION) {
-    bodyContent = (
+    ),
+    4: (
       <div className="flex flex-col gap-8">
         <Heading
           title="How would you describe your place ?"
@@ -217,11 +231,8 @@ const RentModal = () => {
           required
         />
       </div>
-    );
-  }
-
-  if (step === STEPS.PRICE) {
-    bodyContent = (
+    ),
+    5: (
       <div className="flex flex-col gap-8">
         <Heading
           title="Now, set your price"
@@ -238,8 +249,8 @@ const RentModal = () => {
           required
         />
       </div>
-    );
-  }
+    ),
+  };
 
   return (
     <Modal
@@ -250,7 +261,7 @@ const RentModal = () => {
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
-      body={bodyContent}
+      body={diffBodyContent[step]}
     />
   );
 };

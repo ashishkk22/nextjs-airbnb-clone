@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import { IoMdClose } from "react-icons/io";
 import Button from "../Button";
 
@@ -28,32 +28,27 @@ const Modal: React.FC<ModalProps> = ({
   secondaryAction,
   secondaryActionLabel,
 }) => {
-  const [showModal, setShowModal] = useState(isOpen);
-  useEffect(() => {
-    setShowModal(isOpen);
-  }, [isOpen]);
-
-  const handleClose = useCallback(() => {
+  const handleClose = () => {
     if (disabled) {
       return;
     }
-    setShowModal(false);
     setTimeout(() => {
       onClose();
     }, 300);
-  }, [disabled, onClose]);
+  };
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = () => {
     if (disabled) return;
     onSubmit();
-  }, [disabled, onSubmit]);
+  };
 
-  const handleSecondaryAction = useCallback(() => {
+  const handleSecondaryAction = () => {
     if (disabled || !secondaryAction) return;
     secondaryAction();
-  }, [disabled, secondaryAction]);
+  };
 
   if (!isOpen) return null;
+
   return (
     <>
       <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-neutral-800/70">
@@ -61,7 +56,7 @@ const Modal: React.FC<ModalProps> = ({
           {/* CONTENT  */}
           <div
             className={`translate duration-300 h-full ${
-              showModal
+              isOpen
                 ? "translate-y-0 opacity-100"
                 : "translate-y-full opacity-0"
             } `}

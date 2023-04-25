@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { memo } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 interface CounterProps {
@@ -16,17 +16,15 @@ const Counter: React.FC<CounterProps> = ({
   value,
   onChange,
 }) => {
-  const onAdd = useCallback(() => {
+  const onAdd = () => {
     onChange(value + 1);
-  }, [onChange, value]);
-
-  const onReduce = useCallback(() => {
+  };
+  const onReduce = () => {
     if (value === 1) {
       return;
     }
     onChange(value - 1);
-  }, [value, onChange]);
-
+  };
   return (
     <div className="flex flex-row items-center justify-between ">
       <div className="flex flex-col">
@@ -53,4 +51,4 @@ const Counter: React.FC<CounterProps> = ({
     </div>
   );
 };
-export default Counter;
+export default memo(Counter);

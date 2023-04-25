@@ -3,7 +3,7 @@ import React from "react";
 import { signIn } from "next-auth/react";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import axios from "axios";
@@ -50,10 +50,10 @@ const LoginModal = () => {
     });
   };
 
-  const toggle = useCallback(() => {
+  const toggle = () => {
     loginModal.onClose();
     registerModal.onOpen();
-  }, [loginModal, registerModal]);
+  };
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
