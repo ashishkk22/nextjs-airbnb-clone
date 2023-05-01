@@ -17,7 +17,6 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
 }) => {
   const router = useRouter();
   const params = useSearchParams();
-  console.log("category box");
   const handleClick = () => {
     let currentQuery = {};
     if (params) {
