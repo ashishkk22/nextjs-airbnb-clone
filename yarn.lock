@@ -42,6 +42,13 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
+"@babel/runtime@^7.21.0":
+  version "7.21.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.5.tgz#8492dddda9644ae3bda3b45eabe87382caee7200"
+  integrity sha512-8jI69toZqqcsnqGGqwGS4Qb1VwLOEp4hz+CXPywcvjs60u3B4Pom/U/7rm4W8tMOYEB+E9wgD0mW1l3r8qlI9Q==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
 "@babel/types@^7.21.4":
   version "7.21.4"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.21.4.tgz#2d5d6bb7908699b3b416409ffd3b5daa25b030d4"
@@ -454,6 +461,14 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
+"@types/react-date-range@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@types/react-date-range/-/react-date-range-1.4.4.tgz#235910d6c00d9be905fc5de037a8820616bb2a79"
+  integrity sha512-9Y9NyNgaCsEVN/+O4HKuxzPbVjRVBGdOKRxMDcsTRWVG62lpYgnxefNckTXDWup8FvczoqPW0+ESZR6R1yymDg==
+  dependencies:
+    "@types/react" "*"
+    date-fns "^2.16.1"
+
 "@types/react-dom@18.0.11":
   version "18.0.11"
   resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.0.11.tgz"
@@ -842,6 +857,11 @@ chownr@^2.0.0:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
+classnames@^2.2.6:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
+  integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
+
 client-only@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
@@ -942,6 +962,13 @@ damerau-levenshtein@^1.0.8:
   version "1.0.8"
   resolved "https://registry.npmjs.org/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
+
+date-fns@^2.16.1:
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.30.0.tgz#f367e644839ff57894ec6ac480de40cae4b0f4d0"
+  integrity sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
 
 date-fns@^2.29.3:
   version "2.29.3"
@@ -2577,7 +2604,7 @@ prisma@^4.13.0:
   dependencies:
     "@prisma/engines" "4.13.0"
 
-prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.8.1:
+prop-types@15, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -2615,6 +2642,16 @@ quick-lru@^5.1.1:
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+react-date-range@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-date-range/-/react-date-range-1.4.0.tgz#d2073b85bdb4185e4dde288ce29198dd90074045"
+  integrity sha512-+9t0HyClbCqw1IhYbpWecjsiaftCeRN5cdhsi9v06YdimwyMR2yYHWcgVn3URwtN/txhqKpEZB6UX1fHpvK76w==
+  dependencies:
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+    react-list "^0.8.13"
+    shallow-equal "^1.2.1"
+
 react-dom@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
@@ -2651,6 +2688,13 @@ react-leaflet@^4.2.1:
   integrity sha512-p9chkvhcKrWn/H/1FFeVSqLdReGwn2qmiobOQGO3BifX+/vV/39qhY8dGqbdcPh1e6jxh/QHriLXr7a4eLFK4Q==
   dependencies:
     "@react-leaflet/core" "^2.1.0"
+
+react-list@^0.8.13:
+  version "0.8.17"
+  resolved "https://registry.yarnpkg.com/react-list/-/react-list-0.8.17.tgz#49f55af2797cfdf3974ad2188a191e0ee919d254"
+  integrity sha512-pgmzGi0G5uGrdHzMhgO7KR1wx5ZXVvI3SsJUmkblSAKtewIhMwbQiMuQiTE83ozo04BQJbe0r3WIWzSO0dR1xg==
+  dependencies:
+    prop-types "15"
 
 react-select@^5.7.2:
   version "5.7.2"
@@ -2800,6 +2844,11 @@ set-blocking@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
   integrity sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==
+
+shallow-equal@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/shallow-equal/-/shallow-equal-1.2.1.tgz#4c16abfa56043aa20d050324efa68940b0da79da"
+  integrity sha512-S4vJDjHHMBaiZuT9NPb616CSmLf618jawtv3sufLl6ivK8WocjAo58cXwbRV1cgqxH0Qbv+iUt6m05eqEa2IRA==
 
 shebang-command@^2.0.0:
   version "2.0.0"
