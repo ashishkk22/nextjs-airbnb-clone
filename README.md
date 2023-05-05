@@ -62,6 +62,21 @@ To run this project, you will need to add the following environment variables to
 
 ## :toolbox: Getting Started
 
+### System Requirements
+
+- git v2.13 or greater
+- nodejs `14 || 16 || 18`
+- npm v8.16.0 or greater
+
+All of these must be available in your `PATH`. To verify things are set up
+properly, you can run this:
+
+```shell
+git --version
+node --version
+npm --version
+```
+
 <!-- Prerequisites -->
 
 ### :bangbang: Prerequisites
@@ -70,17 +85,6 @@ This project uses Yarn as package manager
 
 ```bash
  npm install --global yarn
-```
-
-<!-- Installation -->
-
-### :gear: Installation
-
-Install my-project with npm
-
-```bash
-  yarn install my-project
-  cd my-project
 ```
 
 <!-- Run Locally -->
