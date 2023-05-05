@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<div align="center">
+  <h1>Airbnb NextJs Clone</h1>
+</div>
 
-First, run the development server:
+<br />
+
+<!-- TechStack -->
+
+### :space_invader: Tech Stack
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://nextjs.org/">Next.js</a></li>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://www.prisma.io/">Prisma</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.mongodb.com/">MongoDB</a></li>
+  </ul>
+</details>
+
+<!-- Features -->
+
+### :dart: Features
+
+- Property owners can add their properties to the website and they can manage their properties' reservations.
+- Users can filter the properties like countries, dates, rooms, guests etc.
+- Users can add the properties to the favourites section.
+- Users can manage their existing reservations from my reservation section
+- This website supports login with GitHub, Google and Email.
+
+<!-- Env Variables -->
+
+### :key: Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file. you can refer .env.example file for the references.
+
+`DATABASE_URL`
+`NEXTAUTH_SECRET`
+`GOOGLE_ID`
+`GOOGLE_SECRET`
+`GITHUB_ID`
+`GITHUB_SECRET`
+`NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME`
+
+<!-- Getting Started -->
+
+## :toolbox: Getting Started
+
+<!-- Prerequisites -->
+
+### :bangbang: Prerequisites
+
+This project uses Yarn as package manager
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+ npm install --global yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- Installation -->
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### :gear: Installation
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+Install my-project with npm
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+  yarn install my-project
+  cd my-project
+```
 
-## Learn More
+<!-- Run Locally -->
 
-To learn more about Next.js, take a look at the following resources:
+### :running: Run Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Clone the project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+  https://github.com/ashishkk22/nextjs-airbnb-clone.git
+```
 
-## Deploy on Vercel
+Go to the project directory
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+  cd nextjs-airbnb-clone
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Install dependencies and add the required environment variables in the .env
+
+```bash
+  yarn install
+```
+
+To synchronize your Prisma schema with your database schema run
+
+```bash
+  npx prisma db push
+```
+
+Start the dev server
+
+```bash
+  yarn dev
+```
+
+
+<!-- Contact -->
+
+## :handshake: Contact
+
+Ashish Kachhadiya - ashishkachhadiya22@gmail.com
