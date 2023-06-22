@@ -54,6 +54,7 @@ const RegisterModal = () => {
       <Input
         id="email"
         label="Email"
+        type="email"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -94,7 +95,7 @@ const RegisterModal = () => {
       />
       <Button
         outline
-        label="Continue with Google"
+        label="Continue with Github"
         icon={AiFillGithub}
         onClick={() => signIn("github")}
       />
