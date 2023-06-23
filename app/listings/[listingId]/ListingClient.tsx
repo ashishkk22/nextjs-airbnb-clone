@@ -47,7 +47,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
       });
       dates = [...dates, ...range];
     });
-    console.log(dates);
     return dates;
   }, [reservations]);
 

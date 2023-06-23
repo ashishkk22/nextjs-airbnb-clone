@@ -5,7 +5,7 @@ import getCurrentUser from "@/app/actions/getCurrentUser";
 
 export async function POST(request: Request) {
   const currentUser = await getCurrentUser();
-  console.log(currentUser?.id);
+
   if (!currentUser) {
     return NextResponse.error();
   }
